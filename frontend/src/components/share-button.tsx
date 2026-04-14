@@ -47,15 +47,11 @@ export function ShareButton({ projectId, title }: ShareButtonProps) {
   const encodedTitle = encodeURIComponent(title)
 
   function copyLink() {
-    const textarea = document.createElement("textarea")
-    textarea.value = url
-    textarea.style.position = "fixed"
-    textarea.style.opacity = "0"
-    document.body.appendChild(textarea)
-    textarea.select()
-    document.execCommand("copy")
-    document.body.removeChild(textarea)
-    toast.success(t`Link copied!`)
+    // Delay so the dropdown fully closes and releases focus first
+    setTimeout(async () => {
+      await navigator.clipboard.writeText(url)
+      toast.success(t`Link copied!`)
+    }, 100)
   }
 
   return (

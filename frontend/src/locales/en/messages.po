@@ -107,9 +107,13 @@ msgstr "Clinics, awareness, wellness"
 msgid "Community"
 msgstr "Community"
 
-#: src/routes/index.tsx:27
+#: src/routes/index.tsx:47
 msgid "Community Funds It"
 msgstr "Community Funds It"
+
+#: src/routes/index.tsx:149
+msgid "Community Impact"
+msgstr "Community Impact"
 
 #: src/routes/index.tsx:29
 #~ msgid "Connecting volunteers with sponsors to fund and execute community projects. Suggest ideas, fund what matters, and volunteer to make it happen."
@@ -122,6 +126,14 @@ msgstr "Contribute ${parsedAmount}"
 #: src/routes/index.tsx:71
 #~ msgid "Contribute to projects you care about and watch them reach their funding goals."
 #~ msgstr "Contribute to projects you care about and watch them reach their funding goals."
+
+#: src/components/share-button.tsx:101
+msgid "Copy Link"
+msgstr "Copy Link"
+
+#: src/components/share-button.tsx:54
+msgid "Copy this link:"
+msgstr "Copy this link:"
 
 #: src/routes/submit.tsx:117
 msgid "Describe your project idea and it will be reviewed by an admin before going live."
@@ -155,13 +167,21 @@ msgstr "Environment"
 msgid "Events, support, outreach"
 msgstr "Events, support, outreach"
 
+#: src/routes/index.tsx:249
+msgid "Every Hand Makes a Difference"
+msgstr "Every Hand Makes a Difference"
+
 #: src/routes/submit.tsx:148
 msgid "Explain what the project involves, who it helps, and what volunteers would do"
 msgstr "Explain what the project involves, who it helps, and what volunteers would do"
 
-#: src/routes/index.tsx:49
+#: src/routes/index.tsx:95
 msgid "Explore Projects"
 msgstr "Explore Projects"
+
+#: src/components/share-button.tsx:74
+msgid "Facebook"
+msgstr "Facebook"
 
 #: src/routes/admin/review.$projectId.tsx:91
 msgid "Failed to approve project"
@@ -199,7 +219,7 @@ msgstr "Fully funded and looking for volunteers"
 msgid "Fund"
 msgstr "Fund"
 
-#: src/routes/index.tsx:44
+#: src/routes/index.tsx:84
 msgid "Fund community projects. Volunteer to make them happen."
 msgstr "Fund community projects. Volunteer to make them happen."
 
@@ -208,7 +228,7 @@ msgstr "Fund community projects. Volunteer to make them happen."
 msgid "Funded"
 msgstr "Funded"
 
-#: src/components/project-detail-content.tsx:88
+#: src/components/project-detail-content.tsx:79
 #: src/components/project-status-badge.tsx:49
 #: src/routes/projects/index.tsx:32
 #: src/routes/projects/index.tsx:73
@@ -218,6 +238,10 @@ msgstr "Funding"
 #: src/routes/admin/review.$projectId.tsx:175
 msgid "Funding Target ($)"
 msgstr "Funding Target ($)"
+
+#: src/routes/index.tsx:260
+msgid "Get Involved"
+msgstr "Get Involved"
 
 #: src/routes/submit.tsx:132
 msgid "Give your idea a clear, descriptive title"
@@ -232,7 +256,7 @@ msgstr "Health"
 msgid "Honor Board"
 msgstr "Honor Board"
 
-#: src/routes/index.tsx:64
+#: src/routes/index.tsx:125
 msgid "How It Works"
 msgstr "How It Works"
 
@@ -240,11 +264,15 @@ msgstr "How It Works"
 msgid "Infrastructure"
 msgstr "Infrastructure"
 
-#: src/components/project-card.tsx:43
+#: src/components/project-card.tsx:44
 msgid "Launching soon!"
 msgstr "Launching soon!"
 
-#: src/components/project-card.tsx:40
+#: src/components/share-button.tsx:52
+msgid "Link copied!"
+msgstr "Link copied!"
+
+#: src/components/project-card.tsx:41
 msgid "Looking for {needed} more volunteers"
 msgstr "Looking for {needed} more volunteers"
 
@@ -252,11 +280,11 @@ msgstr "Looking for {needed} more volunteers"
 msgid "Most Liked"
 msgstr "Most Liked"
 
-#: src/components/project-card.tsx:36
+#: src/components/project-card.tsx:37
 msgid "Needs ${remaining} more"
 msgstr "Needs ${remaining} more"
 
-#: src/routes/index.tsx:121
+#: src/routes/index.tsx:220
 msgid "No active projects yet — check back soon or submit your own idea!"
 msgstr "No active projects yet — check back soon or submit your own idea!"
 
@@ -292,7 +320,7 @@ msgstr "Other amount"
 msgid "Pending"
 msgstr "Pending"
 
-#: src/routes/index.tsx:28
+#: src/routes/index.tsx:48
 msgid "People contribute to make it happen."
 msgstr "People contribute to make it happen."
 
@@ -316,7 +344,7 @@ msgstr "Please fill in all fields"
 msgid "Project approved!"
 msgstr "Project approved!"
 
-#: src/components/project-detail-content.tsx:48
+#: src/components/project-detail-content.tsx:49
 #: src/routes/admin/review.$projectId.tsx:132
 msgid "Project not found."
 msgstr "Project not found."
@@ -325,11 +353,15 @@ msgstr "Project not found."
 msgid "Project rejected"
 msgstr "Project rejected"
 
-#: src/routes/index.tsx:88
+#: src/routes/index.tsx:157
+msgid "Projects Funded"
+msgstr "Projects Funded"
+
+#: src/routes/index.tsx:186
 msgid "Projects That Need You"
 msgstr "Projects That Need You"
 
-#: src/routes/index.tsx:24
+#: src/routes/index.tsx:43
 msgid "Propose a volunteering project for your community."
 msgstr "Propose a volunteering project for your community."
 
@@ -399,7 +431,7 @@ msgstr "Sign in to like"
 msgid "Sign in to volunteer"
 msgstr "Sign in to volunteer"
 
-#: src/routes/index.tsx:32
+#: src/routes/index.tsx:53
 msgid "Sign up and bring the project to life."
 msgstr "Sign up and bring the project to life."
 
@@ -419,8 +451,8 @@ msgstr "Status:"
 msgid "Submit a Volunteering Idea"
 msgstr "Submit a Volunteering Idea"
 
-#: src/routes/index.tsx:23
-#: src/routes/index.tsx:55
+#: src/routes/index.tsx:42
+#: src/routes/index.tsx:101
 msgid "Submit an Idea"
 msgstr "Submit an Idea"
 
@@ -434,9 +466,7 @@ msgstr "Submit Idea"
 #~ msgstr "Submit volunteering ideas and like the projects you believe in."
 
 #. placeholder {0}: project.submittedBy
-#. placeholder {0}: project.submitterName
 #. placeholder {1}: new Date(project.createdAt).toLocaleDateString()
-#: src/components/project-detail-content.tsx:72
 #: src/routes/admin/index.tsx:91
 #: src/routes/admin/review.$projectId.tsx:154
 msgid "Submitted by {0} on {1}"
@@ -450,12 +480,12 @@ msgstr "Submitting..."
 #~ msgid "Suggest & Vote"
 #~ msgstr "Suggest & Vote"
 
-#: src/routes/index.tsx:91
+#: src/routes/index.tsx:189
 msgid "Support these community initiatives with funding or volunteering."
 msgstr "Support these community initiatives with funding or volunteering."
 
 #: src/components/navbar.tsx:74
-#: src/routes/index.tsx:41
+#: src/routes/index.tsx:74
 msgid "Takatuf"
 msgstr "Takatuf"
 
@@ -475,7 +505,7 @@ msgstr "These projects need your financial support"
 msgid "This is a demo — no real payment will be processed."
 msgstr "This is a demo — no real payment will be processed."
 
-#: src/components/project-detail-content.tsx:132
+#: src/components/project-detail-content.tsx:123
 msgid "This project is fully funded and staffed! Stay tuned for updates."
 msgstr "This project is fully funded and staffed! Stay tuned for updates."
 
@@ -491,7 +521,11 @@ msgstr "Tips for a great idea"
 msgid "Title"
 msgstr "Title"
 
-#: src/routes/index.tsx:98
+#: src/routes/index.tsx:173
+msgid "Total Raised"
+msgstr "Total Raised"
+
+#: src/routes/index.tsx:196
 msgid "View all"
 msgstr "View all"
 
@@ -504,21 +538,37 @@ msgstr "View all"
 #~ msgid "Volunteer Hub"
 #~ msgstr "Volunteer Hub"
 
-#: src/components/project-detail-content.tsx:118
+#: src/components/project-detail-content.tsx:109
 msgid "Volunteers"
 msgstr "Volunteers"
 
-#: src/routes/index.tsx:31
+#: src/routes/index.tsx:52
 msgid "Volunteers Join"
 msgstr "Volunteers Join"
+
+#: src/routes/index.tsx:165
+msgid "Volunteers Joined"
+msgstr "Volunteers Joined"
 
 #: src/routes/admin/review.$projectId.tsx:194
 msgid "Volunteers Required"
 msgstr "Volunteers Required"
 
+#: src/components/share-button.tsx:96
+msgid "WhatsApp"
+msgstr "WhatsApp"
+
+#: src/routes/index.tsx:252
+msgid "Whether you fund a project or show up to help — your contribution builds a stronger community."
+msgstr "Whether you fund a project or show up to help — your contribution builds a stronger community."
+
 #: src/components/volunteer-button.tsx:62
 msgid "Withdraw"
 msgstr "Withdraw"
+
+#: src/components/share-button.tsx:85
+msgid "X (Twitter)"
+msgstr "X (Twitter)"
 
 #: src/components/volunteer-button.tsx:41
 msgid "You have withdrawn from this project"
@@ -533,7 +583,7 @@ msgid "You'll be contacted with details once the team is full."
 msgstr "You'll be contacted with details once the team is full."
 
 #. placeholder {0}: (project.userContributionTotal / 100).toLocaleString()
-#: src/components/project-detail-content.tsx:103
+#: src/components/project-detail-content.tsx:94
 msgid "Your contribution: ${0}"
 msgstr "Your contribution: ${0}"
 

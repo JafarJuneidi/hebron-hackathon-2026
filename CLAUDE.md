@@ -69,15 +69,6 @@
 
 ---
 
-## Design
-
-- Use only shadcn/ui design tokens and Tailwind's default palette
-- Keep it clean: whitespace over decoration
-- Primary color: [fill in once idea is announced]
-- Do not invent custom color schemes — use shadcn's theming system
-
----
-
 ## Context Management
 
 - For self-contained tasks (a single API route, a single component, a bug fix),
@@ -89,57 +80,6 @@
   and any decisions about API shapes or shared types
 - After two failed correction attempts on the same issue, stop and ask the user
   to clarify rather than trying a third approach
-
----
-
-## Team Coordination
-
-### TODO.md is the source of truth
-
-- Before starting any task: read `TODO.md` and `git pull`
-- After completing any task: update `TODO.md` and `git push` immediately
-- Claude should remind the user to pull before starting a new task and push after finishing one
-
-### TODO.md format
-
-Each team member (Jafar, Omar, Yusuf) has their own "In Progress" section to reduce
-merge conflicts. Shared sections (Up Next, Ideas, Done, Blockers) are at the bottom.
-
-```
-## Jafar — In Progress
-- [ ] thing A (started HH:MM)
-
-## Omar — In Progress
-- [ ] thing B (started HH:MM)
-
-## Yusuf — In Progress
-- [ ] thing C (started HH:MM)
-
-## Up Next (prioritized)
-- [ ] thing D — unassigned
-- [ ] thing E — unassigned
-
-## Ideas / Maybe
-- rough idea 1
-
-## Done
-- [x] thing 1 — Jafar
-- [x] thing 2 — Omar
-
-## Blockers
-- Omar needs X from Jafar before starting Y
-```
-
-### Rules
-
-- Each person only edits their own "In Progress" section — never touch someone else's
-- "Up Next" should always have at least 2 unassigned items so anyone
-  can self-assign immediately when they finish something
-- "Ideas / Maybe" is for uncommitted thoughts — anyone or Claude can
-  promote an idea to "Up Next" if it makes sense
-- Keep timestamps on "In Progress" items so stale work is visible
-- If a task has been "In Progress" for more than 45 minutes, flag it
-- When TODO.md conflicts on merge, keep both sides and re-sort — takes 30 seconds
 
 ---
 
@@ -159,18 +99,6 @@ merge conflicts. Shared sections (Up Next, Ideas, Done, Blockers) are at the bot
 - Actions should look clickable, static content should not
 - Group related items visually — use spacing to imply relationships,
   not borders and boxes
-
----
-
-## Hackathon Philosophy
-
-- Total time: 7 hours. Ship a demo, not a product.
-- Hour 0–1: Idea, architecture, scaffold core routes/API
-- Hour 1–5: Build vertical slices — each feature demo-able on its own
-- Hour 5–6: Connect everything, polish the happy path
-- Hour 6–7: Fix demo-breaking bugs only, prep presentation
-- If a feature is taking >45 minutes and isn't demo-critical, cut it
-- Ugly but working beats beautiful but broken
 
 ---
 

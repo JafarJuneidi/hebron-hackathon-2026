@@ -1,6 +1,5 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router"
 import { Trans } from "@lingui/react/macro"
-import { TanStackRouterDevtools } from "@tanstack/router-devtools"
 import { Navbar } from "@/components/navbar"
 import { AuthInit } from "@/components/auth-init"
 import { Toaster } from "@/components/ui/sonner"
@@ -24,7 +23,6 @@ function RootLayout() {
         </div>
       </footer>
       <Toaster />
-      <TanStackRouterDevtools />
     </div>
   )
 }

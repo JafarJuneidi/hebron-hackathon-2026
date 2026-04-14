@@ -47,12 +47,8 @@ export function ShareButton({ projectId, title }: ShareButtonProps) {
   const encodedTitle = encodeURIComponent(title)
 
   async function copyLink() {
-    try {
-      await navigator.clipboard.writeText(url)
-      toast.success(t`Link copied!`)
-    } catch {
-      window.prompt(t`Copy this link:`, url)
-    }
+    await navigator.clipboard.writeText(url)
+    toast.success(t`Link copied!`)
   }
 
   return (

@@ -11,7 +11,7 @@ export const Route = createRootRoute({
 
 function RootLayout() {
   return (
-    <div className="flex min-h-svh flex-col">
+    <div className="flex min-h-svh flex-col overflow-x-hidden">
       <AuthInit />
       <Navbar />
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-6">

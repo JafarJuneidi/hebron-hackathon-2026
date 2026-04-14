@@ -25,12 +25,21 @@ function ProjectsPage() {
     statusFilter || undefined
   )
 
+  const count = projects?.length ?? 0
+
   const statusOptions: { value: StatusFilter; label: string }[] = [
     { value: "", label: t`All` },
     { value: "funding", label: t`Funding` },
     { value: "funded", label: t`Funded` },
     { value: "ready", label: t`Ready` },
   ]
+
+  const filterSubtitles: Record<StatusFilter, React.ReactNode> = {
+    "": null,
+    funding: <Trans>These projects need your financial support</Trans>,
+    funded: <Trans>Fully funded and looking for volunteers</Trans>,
+    ready: <Trans>All set and about to launch!</Trans>,
+  }
 
   return (
     <div>
@@ -50,6 +59,7 @@ function ProjectsPage() {
             <Button
               variant={sort === "likes" ? "default" : "outline"}
               size="sm"
+              className="rounded-full"
               onClick={() => setSort("likes")}
             >
               <Trans>Most Liked</Trans>
@@ -57,6 +67,7 @@ function ProjectsPage() {
             <Button
               variant={sort === "funding" ? "default" : "outline"}
               size="sm"
+              className="rounded-full"
               onClick={() => setSort("funding")}
             >
               <Trans>Funding</Trans>
@@ -74,6 +85,7 @@ function ProjectsPage() {
                 key={opt.value}
                 variant={statusFilter === opt.value ? "default" : "outline"}
                 size="sm"
+                className="rounded-full"
                 onClick={() => setStatusFilter(opt.value)}
               >
                 {opt.label}
@@ -81,6 +93,15 @@ function ProjectsPage() {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="mb-4 space-y-1">
+        <p className="text-sm text-muted-foreground">{t`Showing ${count} projects`}</p>
+        {filterSubtitles[statusFilter] && (
+          <p className="text-sm text-muted-foreground">
+            {filterSubtitles[statusFilter]}
+          </p>
+        )}
       </div>
 
       {isLoading && (

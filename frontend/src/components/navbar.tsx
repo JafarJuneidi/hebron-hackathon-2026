@@ -29,16 +29,18 @@ function LanguageToggle() {
   const { i18n } = useLingui()
   const currentLocale = i18n.locale as Locale
   const nextLocale: Locale = currentLocale === "en" ? "ar" : "en"
+  const shortLabel = nextLocale === "ar" ? "AR" : "EN"
 
   return (
     <Button
       variant="ghost"
-      size="sm"
+      size="icon"
       onClick={() => activateLocale(nextLocale)}
-      className="gap-1.5 text-xs"
+      className="size-8 gap-1"
+      title={locales[nextLocale]}
     >
       <Languages className="size-4" />
-      {locales[nextLocale]}
+      <span className="text-[10px] font-medium leading-none">{shortLabel}</span>
     </Button>
   )
 }
@@ -61,12 +63,12 @@ export function Navbar() {
   ]
 
   return (
-    <header className="border-b">
+    <header className="border-b-2 border-primary/20">
       <div className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4">
         {/* Logo */}
         <Link
           to="/"
-          className="text-lg font-semibold"
+          className="text-primary font-bold text-xl"
           onClick={() => setMobileOpen(false)}
         >
           <Trans>Takatuf</Trans>

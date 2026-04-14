@@ -17,6 +17,14 @@ const RANK_ICONS = [
   { icon: Award, color: "text-amber-700" },
 ]
 
+const PODIUM_BORDERS = [
+  "border-t-4 border-t-amber-400 ring-2 ring-amber-400/30",
+  "border-t-4 border-t-slate-400",
+  "border-t-4 border-t-amber-700",
+]
+
+const RANK_MEDALS = ["🥇", "🥈", "🥉"]
+
 function LeaderboardPage() {
   const { t } = useLingui()
   const { data: entries, isLoading } = useLeaderboard()
@@ -73,7 +81,7 @@ function LeaderboardPage() {
                 return (
                   <Card
                     key={entry.userId}
-                    className={isFirst ? "row-span-1 border-yellow-300 dark:border-yellow-700" : ""}
+                    className={`${PODIUM_BORDERS[rankIndex]} ${isFirst ? "border-yellow-300 dark:border-yellow-700" : ""}`}
                   >
                     <CardContent className="flex flex-col items-center gap-2 p-4 text-center">
                       <RankIcon
@@ -116,7 +124,8 @@ function LeaderboardPage() {
                   key={entry.userId}
                   className="flex items-center gap-3 px-4 py-3 transition-colors hover:bg-muted/50"
                 >
-                  <span className="w-6 text-center text-sm font-medium text-muted-foreground">
+                  <span className="w-8 text-center text-sm font-medium text-muted-foreground">
+                    {index < 3 ? `${RANK_MEDALS[index]} ` : ""}
                     {index + 1}
                   </span>
                   <Avatar className="size-8">

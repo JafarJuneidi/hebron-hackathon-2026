@@ -46,8 +46,15 @@ export function ShareButton({ projectId, title }: ShareButtonProps) {
   const encodedUrl = encodeURIComponent(url)
   const encodedTitle = encodeURIComponent(title)
 
-  async function copyLink() {
-    await navigator.clipboard.writeText(url)
+  function copyLink() {
+    const textarea = document.createElement("textarea")
+    textarea.value = url
+    textarea.style.position = "fixed"
+    textarea.style.opacity = "0"
+    document.body.appendChild(textarea)
+    textarea.select()
+    document.execCommand("copy")
+    document.body.removeChild(textarea)
     toast.success(t`Link copied!`)
   }
 

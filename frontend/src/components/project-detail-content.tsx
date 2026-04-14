@@ -57,21 +57,11 @@ export function ProjectDetailContent({
         {project.title}
       </h2>
       <div className="flex flex-wrap items-center gap-2">
-        <LikeButton
-          projectId={project.id}
-          likes={project.likes}
-          userLiked={project.userLiked}
-        />
         <Badge variant="secondary">
           {CATEGORY_LABELS[project.category as ProjectCategory]}
         </Badge>
         <ProjectStatusBadge status={project.status} />
       </div>
-
-      <p className="text-xs text-muted-foreground">
-        <Trans>Submitted by {project.submitterName} on{" "}
-        {new Date(project.createdAt).toLocaleDateString()}</Trans>
-      </p>
 
       {/* Description */}
       <p className="text-sm text-foreground/90 leading-relaxed whitespace-pre-wrap">
@@ -136,6 +126,16 @@ export function ProjectDetailContent({
             </div>
           </>
         )}
+
+      {/* Like */}
+      <Separator />
+      <div className="flex justify-center">
+        <LikeButton
+          projectId={project.id}
+          likes={project.likes}
+          userLiked={project.userLiked}
+        />
+      </div>
     </div>
   )
 }

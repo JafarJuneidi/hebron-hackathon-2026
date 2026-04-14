@@ -126,6 +126,15 @@ export interface ApproveProjectRequest {
   volunteersRequired: number
 }
 
+export interface BulkInviteRequest {
+  emails: string[]
+}
+
+export interface BulkInviteResponse {
+  sent: string[]
+  failed: string[]
+}
+
 // === Leaderboard Types ===
 
 export interface LeaderboardEntry {

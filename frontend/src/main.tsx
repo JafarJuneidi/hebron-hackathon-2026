@@ -3,7 +3,10 @@ import { createRoot } from "react-dom/client"
 import { ClerkProvider } from "@clerk/react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { RouterProvider, createRouter } from "@tanstack/react-router"
+import { i18n } from "@lingui/core"
+import { I18nProvider } from "@lingui/react"
 import { ThemeProvider } from "@/components/theme-provider.tsx"
+import { activateLocale, getStoredLocale } from "@/lib/i18n"
 import { routeTree } from "./routeTree.gen"
 
 import "./index.css"
@@ -23,14 +26,19 @@ declare module "@tanstack/react-router" {
   }
 }
 
+// Activate stored locale before rendering
+await activateLocale(getStoredLocale())
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY}>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider>
-          <RouterProvider router={router} />
-        </ThemeProvider>
-      </QueryClientProvider>
-    </ClerkProvider>
+    <I18nProvider i18n={i18n}>
+      <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY}>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider>
+            <RouterProvider router={router} />
+          </ThemeProvider>
+        </QueryClientProvider>
+      </ClerkProvider>
+    </I18nProvider>
   </StrictMode>
 )

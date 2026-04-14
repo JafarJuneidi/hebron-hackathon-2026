@@ -1,4 +1,5 @@
 import { useProject } from "@/hooks/use-projects"
+import { Trans } from "@lingui/react/macro"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -44,7 +45,7 @@ export function ProjectDetailContent({
   if (!project) {
     return (
       <div className="py-8 text-center">
-        <p className="text-muted-foreground">Project not found.</p>
+        <p className="text-muted-foreground"><Trans>Project not found.</Trans></p>
       </div>
     )
   }
@@ -68,8 +69,8 @@ export function ProjectDetailContent({
       </div>
 
       <p className="text-xs text-muted-foreground">
-        Submitted by {project.submitterName} on{" "}
-        {new Date(project.createdAt).toLocaleDateString()}
+        <Trans>Submitted by {project.submitterName} on{" "}
+        {new Date(project.createdAt).toLocaleDateString()}</Trans>
       </p>
 
       {/* Description */}
@@ -82,7 +83,7 @@ export function ProjectDetailContent({
         <>
           <Separator />
           <div className="space-y-3">
-            <h3 className="text-sm font-medium text-foreground">Funding</h3>
+            <h3 className="text-sm font-medium text-foreground"><Trans>Funding</Trans></h3>
             <FundingBar
               current={project.fundingCurrent}
               target={project.fundingTarget}
@@ -96,8 +97,7 @@ export function ProjectDetailContent({
             )}
             {project.userContributionTotal > 0 && (
               <p className="text-xs text-muted-foreground">
-                Your contribution: $
-                {(project.userContributionTotal / 100).toLocaleString()}
+                <Trans>Your contribution: ${(project.userContributionTotal / 100).toLocaleString()}</Trans>
               </p>
             )}
           </div>
@@ -111,7 +111,7 @@ export function ProjectDetailContent({
             <Separator />
             <div className="space-y-3">
               <h3 className="text-sm font-medium text-foreground">
-                Volunteers
+                <Trans>Volunteers</Trans>
               </h3>
               {project.status === "funded" && (
                 <VolunteerButton
@@ -125,8 +125,8 @@ export function ProjectDetailContent({
                 <div className="flex items-center gap-2 text-green-700">
                   <CheckCircle className="size-5" />
                   <span className="text-sm font-medium">
-                    This project is ready to start! All{" "}
-                    {project.volunteersRequired} volunteers have signed up.
+                    <Trans>This project is ready to start! All{" "}
+                    {project.volunteersRequired} volunteers have signed up.</Trans>
                   </span>
                 </div>
               )}

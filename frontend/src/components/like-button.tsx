@@ -1,5 +1,6 @@
 import { Heart } from "lucide-react"
 import { useAuth } from "@clerk/react"
+import { useLingui } from "@lingui/react/macro"
 import { toast } from "sonner"
 import { Button } from "@/components/ui/button"
 import { useLike } from "@/hooks/use-projects"
@@ -12,12 +13,13 @@ interface LikeButtonProps {
 }
 
 export function LikeButton({ projectId, likes, userLiked }: LikeButtonProps) {
+  const { t } = useLingui()
   const { isSignedIn } = useAuth()
   const likeMutation = useLike(projectId)
 
   function handleClick() {
     if (!isSignedIn) {
-      toast.error("Sign in to like")
+      toast.error(t`Sign in to like`)
       return
     }
     likeMutation.mutate()

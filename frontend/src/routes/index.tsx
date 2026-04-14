@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
+import { Trans } from "@lingui/react/macro"
 import { useAuth } from "@clerk/react"
 import { useProjects } from "@/hooks/use-projects"
 import { ProjectCard } from "@/components/project-card"
@@ -22,24 +23,24 @@ function HomePage() {
       {/* Hero */}
       <section className="text-center space-y-4">
         <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-5xl">
-          Volunteer Hub
+          <Trans>Takatuf</Trans>
         </h1>
         <p className="mx-auto max-w-xl text-base text-muted-foreground sm:text-lg">
-          Connecting volunteers with sponsors to fund and execute community
+          <Trans>Connecting volunteers with sponsors to fund and execute community
           projects. Suggest ideas, fund what matters, and volunteer to make it
-          happen.
+          happen.</Trans>
         </p>
         <div className="flex flex-col items-center justify-center gap-3 pt-2 sm:flex-row">
           <Link to="/projects">
             <Button size="lg">
-              Browse Projects
+              <Trans>Browse Projects</Trans>
               <ArrowRight className="ml-2 size-4" />
             </Button>
           </Link>
           {isSignedIn && (
             <Link to="/submit">
               <Button size="lg" variant="outline">
-                Submit an Idea
+                <Trans>Submit an Idea</Trans>
               </Button>
             </Link>
           )}
@@ -49,36 +50,36 @@ function HomePage() {
       {/* How it works */}
       <section className="space-y-6">
         <h2 className="text-center text-xl font-semibold text-foreground">
-          How It Works
+          <Trans>How It Works</Trans>
         </h2>
         <div className="grid gap-6 sm:grid-cols-3">
           <div className="text-center space-y-2">
             <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10">
               <Heart className="size-6 text-primary" />
             </div>
-            <h3 className="font-medium text-foreground">Suggest & Vote</h3>
+            <h3 className="font-medium text-foreground"><Trans>Suggest & Vote</Trans></h3>
             <p className="text-sm text-muted-foreground">
-              Submit volunteering ideas and like the projects you believe in.
+              <Trans>Submit volunteering ideas and like the projects you believe in.</Trans>
             </p>
           </div>
           <div className="text-center space-y-2">
             <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10">
               <DollarSign className="size-6 text-primary" />
             </div>
-            <h3 className="font-medium text-foreground">Fund</h3>
+            <h3 className="font-medium text-foreground"><Trans>Fund</Trans></h3>
             <p className="text-sm text-muted-foreground">
-              Contribute to projects you care about and watch them reach their
-              funding goals.
+              <Trans>Contribute to projects you care about and watch them reach their
+              funding goals.</Trans>
             </p>
           </div>
           <div className="text-center space-y-2">
             <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-primary/10">
               <Users className="size-6 text-primary" />
             </div>
-            <h3 className="font-medium text-foreground">Volunteer</h3>
+            <h3 className="font-medium text-foreground"><Trans>Volunteer</Trans></h3>
             <p className="text-sm text-muted-foreground">
-              Once funded, sign up to volunteer and help bring the project to
-              life.
+              <Trans>Once funded, sign up to volunteer and help bring the project to
+              life.</Trans>
             </p>
           </div>
         </div>
@@ -88,13 +89,13 @@ function HomePage() {
       <section className="space-y-6">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-semibold text-foreground">
-            Featured Projects
+            <Trans>Featured Projects</Trans>
           </h2>
           <Link
             to="/projects"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            View all
+            <Trans>View all</Trans>
           </Link>
         </div>
 
@@ -117,7 +118,7 @@ function HomePage() {
           <Card>
             <CardContent className="py-12 text-center">
               <p className="text-muted-foreground">
-                No projects yet. Be the first to submit an idea!
+                <Trans>No projects yet. Be the first to submit an idea!</Trans>
               </p>
             </CardContent>
           </Card>

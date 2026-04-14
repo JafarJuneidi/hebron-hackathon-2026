@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { createFileRoute } from "@tanstack/react-router"
+import { Trans } from "@lingui/react/macro"
+import { useLingui } from "@lingui/react/macro"
 import { useProjects } from "@/hooks/use-projects"
 import { ProjectCard } from "@/components/project-card"
 import { Skeleton } from "@/components/ui/skeleton"
@@ -14,6 +16,7 @@ type SortOption = "likes" | "funding"
 type StatusFilter = "" | "funding" | "funded" | "ready"
 
 function ProjectsPage() {
+  const { t } = useLingui()
   const [sort, setSort] = useState<SortOption>("likes")
   const [statusFilter, setStatusFilter] = useState<StatusFilter>("")
 
@@ -23,47 +26,47 @@ function ProjectsPage() {
   )
 
   const statusOptions: { value: StatusFilter; label: string }[] = [
-    { value: "", label: "All" },
-    { value: "funding", label: "Funding" },
-    { value: "funded", label: "Funded" },
-    { value: "ready", label: "Ready" },
+    { value: "", label: t`All` },
+    { value: "funding", label: t`Funding` },
+    { value: "funded", label: t`Funded` },
+    { value: "ready", label: t`Ready` },
   ]
 
   return (
     <div>
       <div className="mb-6">
         <h1 className="text-2xl font-semibold text-foreground">
-          Browse Projects
+          <Trans>Browse Projects</Trans>
         </h1>
         <p className="text-muted-foreground mt-1">
-          Discover and support community volunteering projects.
+          <Trans>Discover and support community volunteering projects.</Trans>
         </p>
       </div>
 
       <div className="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
         <div className="flex items-center gap-2">
-          <span className="shrink-0 text-sm text-muted-foreground">Sort:</span>
+          <span className="shrink-0 text-sm text-muted-foreground"><Trans>Sort:</Trans></span>
           <div className="flex gap-1">
             <Button
               variant={sort === "likes" ? "default" : "outline"}
               size="sm"
               onClick={() => setSort("likes")}
             >
-              Most Liked
+              <Trans>Most Liked</Trans>
             </Button>
             <Button
               variant={sort === "funding" ? "default" : "outline"}
               size="sm"
               onClick={() => setSort("funding")}
             >
-              Funding
+              <Trans>Funding</Trans>
             </Button>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="shrink-0 text-sm text-muted-foreground">
-            Status:
+            <Trans>Status:</Trans>
           </span>
           <div className="flex flex-wrap gap-1">
             {statusOptions.map((opt) => (
@@ -100,7 +103,7 @@ function ProjectsPage() {
         <Card>
           <CardContent className="py-12 text-center">
             <p className="text-muted-foreground">
-              No projects found. Be the first to submit an idea!
+              <Trans>No projects found. Be the first to submit an idea!</Trans>
             </p>
           </CardContent>
         </Card>

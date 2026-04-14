@@ -1,3 +1,4 @@
+import { useLingui } from "@lingui/react/macro"
 import { Progress } from "@/components/ui/progress"
 import { cn } from "@/lib/utils"
 
@@ -11,8 +12,11 @@ function formatCents(cents: number): string {
 }
 
 export function FundingBar({ current, target }: FundingBarProps) {
+  const { t } = useLingui()
   const percent = target > 0 ? Math.min(Math.round((current / target) * 100), 100) : 0
   const isComplete = percent >= 100
+  const currentFormatted = formatCents(current)
+  const targetFormatted = formatCents(target)
 
   return (
     <div className="space-y-1.5">
@@ -21,7 +25,7 @@ export function FundingBar({ current, target }: FundingBarProps) {
         className={cn("h-2", isComplete && "[&>[data-slot=progress-indicator]]:bg-green-600")}
       />
       <p className="text-xs text-muted-foreground">
-        {formatCents(current)} / {formatCents(target)} ({percent}%)
+        {t`${currentFormatted} / ${targetFormatted} (${percent}%)`}
       </p>
     </div>
   )

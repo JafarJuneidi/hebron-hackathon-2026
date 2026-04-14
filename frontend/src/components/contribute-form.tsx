@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { useAuth } from "@clerk/react"
+import { Trans } from "@lingui/react/macro"
+import { useLingui } from "@lingui/react/macro"
 import { toast } from "sonner"
 import { DollarSign } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -13,6 +15,7 @@ interface ContributeFormProps {
 }
 
 export function ContributeForm({ projectId, fundingCurrent, fundingTarget }: ContributeFormProps) {
+  const { t } = useLingui()
   const { isSignedIn } = useAuth()
   const [amount, setAmount] = useState("")
   const contributeMutation = useContribute(projectId)
@@ -25,13 +28,13 @@ export function ContributeForm({ projectId, fundingCurrent, fundingTarget }: Con
     e.preventDefault()
 
     if (!isSignedIn) {
-      toast.error("Sign in to contribute")
+      toast.error(t`Sign in to contribute`)
       return
     }
 
     const dollars = parseFloat(amount)
     if (isNaN(dollars) || dollars <= 0) {
-      toast.error("Please enter a valid amount")
+      toast.error(t`Please enter a valid amount`)
       return
     }
 
@@ -39,11 +42,11 @@ export function ContributeForm({ projectId, fundingCurrent, fundingTarget }: Con
       { amount: dollars },
       {
         onSuccess: () => {
-          toast.success("Thank you for your contribution!")
+          toast.success(t`Thank you for your contribution!`)
           setAmount("")
         },
         onError: (error) => {
-          toast.error(error.message || "Failed to contribute")
+          toast.error(error.message || t`Failed to contribute`)
         },
       }
     )
@@ -57,14 +60,14 @@ export function ContributeForm({ projectId, fundingCurrent, fundingTarget }: Con
           type="number"
           min="1"
           step="1"
-          placeholder="Amount"
+          placeholder={t`Amount`}
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           className="pl-7 w-28"
         />
       </div>
       <Button type="submit" size="sm" disabled={contributeMutation.isPending}>
-        {contributeMutation.isPending ? "Sending..." : "Fund"}
+        {contributeMutation.isPending ? <Trans>Sending...</Trans> : <Trans>Fund</Trans>}
       </Button>
     </form>
   )

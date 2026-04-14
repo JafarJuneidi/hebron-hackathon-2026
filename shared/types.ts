@@ -125,3 +125,13 @@ export interface ApproveProjectRequest {
   fundingTarget: number // dollars
   volunteersRequired: number
 }
+
+// === Leaderboard Types ===
+
+export interface LeaderboardEntry {
+  userId: string
+  displayName: string
+  imageUrl: string | null
+  totalContributed: number // cents
+  projectsFunded: number
+}

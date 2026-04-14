@@ -10,6 +10,7 @@ import {
 import { ProjectStatusBadge } from "@/components/project-status-badge"
 import { FundingBar } from "@/components/funding-bar"
 import { LikeButton } from "@/components/like-button"
+import { ShareButton } from "@/components/share-button"
 import { ProjectDetailContent } from "@/components/project-detail-content"
 import { cn } from "@/lib/utils"
 import type { ProjectWithScore } from "@shared/types"
@@ -86,12 +87,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <p className="text-xs text-muted-foreground">
               by {project.submitterName}
             </p>
-            <div onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center gap-1" onClick={(e) => e.stopPropagation()}>
               <LikeButton
                 projectId={project.id}
                 likes={project.likes}
                 userLiked={project.userLiked}
               />
+              <ShareButton projectId={project.id} title={project.title} />
             </div>
           </div>
         </CardContent>

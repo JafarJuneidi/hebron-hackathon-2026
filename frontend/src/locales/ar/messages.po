@@ -216,7 +216,7 @@ msgstr "موّل مشاريع مجتمعية. تطوّع لتحقيقها."
 msgid "Funded"
 msgstr "مُموَّل"
 
-#: src/components/project-detail-content.tsx:78
+#: src/components/project-detail-content.tsx:79
 #: src/components/project-status-badge.tsx:49
 #: src/routes/projects/index.tsx:32
 #: src/routes/projects/index.tsx:73
@@ -252,11 +252,15 @@ msgstr "كيف يعمل"
 msgid "Infrastructure"
 msgstr "بنية تحتية"
 
-#: src/components/project-card.tsx:43
+#: src/components/project-card.tsx:44
 msgid "Launching soon!"
 msgstr "ينطلق قريباً!"
 
-#: src/components/project-card.tsx:40
+#: src/components/share-button.tsx:25
+msgid "Link copied!"
+msgstr "تم نسخ الرابط!"
+
+#: src/components/project-card.tsx:41
 msgid "Looking for {needed} more volunteers"
 msgstr "يحتاج {needed} متطوعين إضافيين"
 
@@ -264,7 +268,7 @@ msgstr "يحتاج {needed} متطوعين إضافيين"
 msgid "Most Liked"
 msgstr "الأكثر إعجاباً"
 
-#: src/components/project-card.tsx:36
+#: src/components/project-card.tsx:37
 msgid "Needs ${remaining} more"
 msgstr "يحتاج ${remaining} إضافية"
 
@@ -328,7 +332,7 @@ msgstr "الرجاء ملء جميع الحقول"
 msgid "Project approved!"
 msgstr "تمت الموافقة على المشروع!"
 
-#: src/components/project-detail-content.tsx:48
+#: src/components/project-detail-content.tsx:49
 #: src/routes/admin/review.$projectId.tsx:132
 msgid "Project not found."
 msgstr "المشروع غير موجود."
@@ -489,7 +493,7 @@ msgstr "هذه المشاريع تحتاج دعمك المالي"
 msgid "This is a demo — no real payment will be processed."
 msgstr "هذا عرض تجريبي — لن تتم أي عملية دفع حقيقية."
 
-#: src/components/project-detail-content.tsx:122
+#: src/components/project-detail-content.tsx:123
 msgid "This project is fully funded and staffed! Stay tuned for updates."
 msgstr "هذا المشروع مموّل ومكتمل الفريق! ترقبوا التحديثات."
 
@@ -522,7 +526,7 @@ msgstr "عرض الكل"
 #~ msgid "Volunteer Hub"
 #~ msgstr "مركز التطوع"
 
-#: src/components/project-detail-content.tsx:108
+#: src/components/project-detail-content.tsx:109
 msgid "Volunteers"
 msgstr "المتطوعون"
 
@@ -559,7 +563,7 @@ msgid "You'll be contacted with details once the team is full."
 msgstr "سيتم التواصل معك بالتفاصيل عند اكتمال الفريق."
 
 #. placeholder {0}: (project.userContributionTotal / 100).toLocaleString()
-#: src/components/project-detail-content.tsx:93
+#: src/components/project-detail-content.tsx:94
 msgid "Your contribution: ${0}"
 msgstr "مساهمتك: ${0}"
 

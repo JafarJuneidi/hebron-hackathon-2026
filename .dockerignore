@@ -1,0 +1,31 @@
+node_modules
+*/node_modules
+dist
+*/dist
+.git
+.gitignore
+.vscode
+.idea
+.DS_Store
+.pnpm-store
+
+# Environment files (passed via docker-compose)
+.env
+.env.*
+!.env.example
+
+# Database (persisted via volume)
+backend/data/
+
+# Auto-generated (rebuilt during build)
+frontend/src/routeTree.gen.ts
+frontend/.tanstack
+
+# Docs
+*.md
+!shared/*.md
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+nginx.conf

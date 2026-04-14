@@ -1,7 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { useAuth } from "@clerk/react"
 import { api } from "@/lib/api"
-import type { Project, ApproveProjectRequest } from "@shared/types"
+import type { Project, ApproveProjectRequest, BulkInviteRequest, BulkInviteResponse } from "@shared/types"
 
 export function usePendingProjects() {
   const { isSignedIn } = useAuth()
@@ -38,5 +38,12 @@ export function useRejectProject() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["admin", "pending"] })
     },
+  })
+}
+
+export function useBulkInvite() {
+  return useMutation({
+    mutationFn: ({ id, emails }: BulkInviteRequest & { id: number }) =>
+      api.post<BulkInviteResponse>(`/api/admin/projects/${id}/invite`, { emails }),
   })
 }

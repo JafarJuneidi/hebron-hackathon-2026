@@ -57,7 +57,7 @@ function HomePage() {
   return (
     <div className="space-y-16 py-4 sm:space-y-24 sm:py-8">
       {/* ── Hero ── */}
-      <section className="relative -mx-4 px-4 py-20 sm:py-28 text-center overflow-hidden">
+      <section className="relative -mx-4 px-4 py-12 sm:py-16 text-center overflow-hidden">
         {/* Pattern overlay */}
         <div className="absolute inset-0 pattern-dots opacity-[0.03] dark:opacity-[0.06] pointer-events-none" />
         {/* Gradient background */}

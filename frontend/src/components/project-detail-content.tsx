@@ -1,4 +1,5 @@
 import { useProject } from "@/hooks/use-projects"
+import { useCurrentUser } from "@/hooks/use-current-user"
 import { Trans } from "@lingui/react/macro"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
@@ -9,6 +10,7 @@ import { LikeButton } from "@/components/like-button"
 import { ContributeForm } from "@/components/contribute-form"
 import { ShareButton } from "@/components/share-button"
 import { VolunteerButton } from "@/components/volunteer-button"
+import { BulkInviteForm } from "@/components/bulk-invite-form"
 import type { ProjectCategory } from "@shared/types"
 import { CheckCircle, DollarSign, Users } from "lucide-react"
 
@@ -29,6 +31,7 @@ export function ProjectDetailContent({
   projectId,
 }: ProjectDetailContentProps) {
   const { data: project, isLoading } = useProject(projectId)
+  const { data: currentUser } = useCurrentUser()
 
   if (isLoading) {
     return (
@@ -109,12 +112,17 @@ export function ProjectDetailContent({
                 <Trans>Volunteers</Trans>
               </h3>
               {project.status === "funded" && (
-                <VolunteerButton
-                  projectId={project.id}
-                  isVolunteered={project.isVolunteered}
-                  volunteersCurrent={project.volunteersCurrent}
-                  volunteersRequired={project.volunteersRequired}
-                />
+                <>
+                  <VolunteerButton
+                    projectId={project.id}
+                    isVolunteered={project.isVolunteered}
+                    volunteersCurrent={project.volunteersCurrent}
+                    volunteersRequired={project.volunteersRequired}
+                  />
+                  {currentUser?.isAdmin && (
+                    <BulkInviteForm projectId={project.id} />
+                  )}
+                </>
               )}
               {project.status === "ready" && (
                 <div className="bg-emerald-50 dark:bg-emerald-950/20 rounded-lg p-4 flex items-center gap-2 text-green-700 dark:text-green-400">

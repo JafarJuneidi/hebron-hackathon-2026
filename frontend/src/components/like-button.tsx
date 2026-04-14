@@ -39,7 +39,7 @@ export function LikeButton({ projectId, likes, userLiked }: LikeButtonProps) {
           userLiked && "fill-red-500 text-red-500"
         )}
       />
-      <span className="text-xs text-muted-foreground">{likes}</span>
+      <span className="text-sm font-medium">{likes}</span>
     </Button>
   )
 }

@@ -9,7 +9,7 @@ import { LikeButton } from "@/components/like-button"
 import { ContributeForm } from "@/components/contribute-form"
 import { VolunteerButton } from "@/components/volunteer-button"
 import type { ProjectCategory } from "@shared/types"
-import { CheckCircle } from "lucide-react"
+import { CheckCircle, DollarSign, Users } from "lucide-react"
 
 const CATEGORY_LABELS: Record<ProjectCategory, string> = {
   education: "Education",
@@ -83,7 +83,10 @@ export function ProjectDetailContent({
         <>
           <Separator />
           <div className="space-y-3">
-            <h3 className="text-sm font-medium text-foreground"><Trans>Funding</Trans></h3>
+            <h3 className="text-sm font-medium text-foreground flex items-center gap-1.5">
+              <DollarSign className="size-4 text-primary" />
+              <Trans>Funding</Trans>
+            </h3>
             <FundingBar
               current={project.fundingCurrent}
               target={project.fundingTarget}
@@ -110,7 +113,8 @@ export function ProjectDetailContent({
           <>
             <Separator />
             <div className="space-y-3">
-              <h3 className="text-sm font-medium text-foreground">
+              <h3 className="text-sm font-medium text-foreground flex items-center gap-1.5">
+                <Users className="size-4 text-primary" />
                 <Trans>Volunteers</Trans>
               </h3>
               {project.status === "funded" && (
@@ -122,11 +126,10 @@ export function ProjectDetailContent({
                 />
               )}
               {project.status === "ready" && (
-                <div className="flex items-center gap-2 text-green-700">
+                <div className="bg-emerald-50 dark:bg-emerald-950/20 rounded-lg p-4 flex items-center gap-2 text-green-700 dark:text-green-400">
                   <CheckCircle className="size-5" />
                   <span className="text-sm font-medium">
-                    <Trans>This project is ready to start! All{" "}
-                    {project.volunteersRequired} volunteers have signed up.</Trans>
+                    <Trans>This project is fully funded and staffed! Stay tuned for updates.</Trans>
                   </span>
                 </div>
               )}

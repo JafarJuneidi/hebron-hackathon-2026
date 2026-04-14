@@ -1,22 +1,48 @@
 import { useLingui } from "@lingui/react/macro"
+import { CircleDollarSign, CheckCircle, Rocket, Clock, XCircle } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import type { ProjectStatus } from "@shared/types"
+import type { LucideIcon } from "lucide-react"
 
 interface ProjectStatusBadgeProps {
   status: ProjectStatus
 }
 
-const STATUS_STYLE: Record<ProjectStatus, { variant: "default" | "secondary" | "outline"; className?: string }> = {
-  pending: { variant: "outline" },
-  funding: { variant: "default" },
-  funded: { variant: "secondary", className: "bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-400" },
-  ready: { variant: "default", className: "bg-green-600 text-white dark:bg-green-700" },
-  rejected: { variant: "outline", className: "text-red-600 border-red-300 dark:text-red-400 dark:border-red-700" },
+const STATUS_CONFIG: Record<ProjectStatus, {
+  variant: "default" | "secondary" | "outline"
+  className?: string
+  icon: LucideIcon
+}> = {
+  pending: {
+    variant: "outline",
+    icon: Clock,
+  },
+  funding: {
+    variant: "default",
+    className: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
+    icon: CircleDollarSign,
+  },
+  funded: {
+    variant: "secondary",
+    className: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400",
+    icon: CheckCircle,
+  },
+  ready: {
+    variant: "default",
+    className: "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400",
+    icon: Rocket,
+  },
+  rejected: {
+    variant: "outline",
+    className: "text-red-600 border-red-300 dark:text-red-400 dark:border-red-700",
+    icon: XCircle,
+  },
 }
 
 export function ProjectStatusBadge({ status }: ProjectStatusBadgeProps) {
   const { t } = useLingui()
-  const style = STATUS_STYLE[status]
+  const config = STATUS_CONFIG[status]
+  const Icon = config.icon
 
   const STATUS_LABELS: Record<ProjectStatus, string> = {
     pending: t`Pending`,
@@ -27,8 +53,9 @@ export function ProjectStatusBadge({ status }: ProjectStatusBadgeProps) {
   }
 
   return (
-    <Badge variant={style.variant} className={style.className}>
-      {STATUS_LABELS[status]}
+    <Badge variant={config.variant} className={config.className}>
+      <Icon className="size-3" />
+      <span className="ml-1">{STATUS_LABELS[status]}</span>
     </Badge>
   )
 }

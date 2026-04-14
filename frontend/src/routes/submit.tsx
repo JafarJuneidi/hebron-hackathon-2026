@@ -82,16 +82,32 @@ function SubmitPage() {
   }
 
   const CATEGORY_LABELS: Record<ProjectCategory, string> = {
-    education: "Education",
-    environment: "Environment",
-    health: "Health",
-    infrastructure: "Infrastructure",
-    community: "Community",
-    other: "Other",
+    education: t`Education`,
+    environment: t`Environment`,
+    health: t`Health`,
+    infrastructure: t`Infrastructure`,
+    community: t`Community`,
+    other: t`Other`,
+  }
+
+  const CATEGORY_DESCRIPTIONS: Record<ProjectCategory, string> = {
+    education: t`Schools, tutoring, literacy`,
+    environment: t`Cleanup, planting, recycling`,
+    health: t`Clinics, awareness, wellness`,
+    infrastructure: t`Roads, buildings, facilities`,
+    community: t`Events, support, outreach`,
+    other: t`Anything else`,
   }
 
   return (
     <div className="mx-auto max-w-2xl">
+      <div className="mb-6 rounded-lg border border-primary/20 bg-primary/5 p-4">
+        <p className="text-sm text-primary font-medium"><Trans>Tips for a great idea</Trans></p>
+        <p className="text-sm text-muted-foreground mt-1">
+          <Trans>Be specific about who benefits, what resources are needed, and why it matters to the community.</Trans>
+        </p>
+      </div>
+
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl font-semibold text-foreground">
@@ -152,7 +168,7 @@ function SubmitPage() {
                 <SelectContent>
                   {PROJECT_CATEGORIES.map((cat) => (
                     <SelectItem key={cat} value={cat}>
-                      {CATEGORY_LABELS[cat]}
+                      {CATEGORY_LABELS[cat]} — {CATEGORY_DESCRIPTIONS[cat]}
                     </SelectItem>
                   ))}
                 </SelectContent>

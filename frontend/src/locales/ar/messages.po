@@ -127,6 +127,10 @@ msgstr "ساهم بـ ${parsedAmount}"
 #~ msgid "Contribute to projects you care about and watch them reach their funding goals."
 #~ msgstr "ساهم في تمويل المشاريع التي تهمك وشاهدها تحقق أهدافها."
 
+#: src/components/share-button.tsx:36
+msgid "Copy this link:"
+msgstr "انسخ هذا الرابط:"
+
 #: src/routes/submit.tsx:117
 msgid "Describe your project idea and it will be reviewed by an admin before going live."
 msgstr "صِف فكرة مشروعك وسيتم مراجعتها من قبل المسؤول قبل نشرها."
@@ -256,7 +260,7 @@ msgstr "بنية تحتية"
 msgid "Launching soon!"
 msgstr "ينطلق قريباً!"
 
-#: src/components/share-button.tsx:25
+#: src/components/share-button.tsx:32
 msgid "Link copied!"
 msgstr "تم نسخ الرابط!"
 

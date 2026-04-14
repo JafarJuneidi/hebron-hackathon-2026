@@ -14,15 +14,26 @@ export function ShareButton({ projectId, title }: ShareButtonProps) {
   async function handleClick() {
     const url = `${window.location.origin}/projects/${projectId}`
 
-    if (navigator.share) {
+    // Use native share on mobile, clipboard on desktop
+    const isMobile = "ontouchstart" in window || navigator.maxTouchPoints > 0
+    if (isMobile && navigator.share) {
       try {
         await navigator.share({ title, text: title, url })
-      } catch {
-        // User cancelled or share failed silently
+        return
+      } catch (e) {
+        // AbortError = user cancelled, which is fine
+        if (e instanceof DOMException && e.name === "AbortError") return
+        // Any other error: fall through to clipboard
       }
-    } else {
+    }
+
+    try {
       await navigator.clipboard.writeText(url)
       toast.success(t`Link copied!`)
+    } catch {
+      // Clipboard API failed (insecure context, no focus, etc.)
+      // Last resort: prompt-based copy
+      window.prompt(t`Copy this link:`, url)
     }
   }
 

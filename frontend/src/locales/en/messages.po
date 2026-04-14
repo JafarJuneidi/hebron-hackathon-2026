@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-04-14 14:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: en\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. placeholder {0}: entry.projectsFunded
+#: src/routes/leaderboard.tsx:96
+msgid "{0} projects"
+msgstr "{0} projects"
+
+#. placeholder {0}: entry.projectsFunded
+#: src/routes/leaderboard.tsx:133
+msgid "{0} projects funded"
+msgstr "{0} projects funded"
+
+#: src/components/funding-bar.tsx:28
+msgid "{currentFormatted} / {targetFormatted} ({percent}%)"
+msgstr "{currentFormatted} / {targetFormatted} ({percent}%)"
+
+#: src/components/volunteer-button.tsx:60
+msgid "{volunteersCurrent} / {volunteersRequired} volunteers"
+msgstr "{volunteersCurrent} / {volunteersRequired} volunteers"
+
+#: src/components/navbar.tsx:59
+msgid "Admin"
+msgstr "Admin"
+
+#: src/routes/admin/index.tsx:36
+msgid "Admin Dashboard"
+msgstr "Admin Dashboard"
+
+#: src/routes/projects/index.tsx:29
+msgid "All"
+msgstr "All"
+
+#: src/routes/leaderboard.tsx:110
+msgid "All Contributors"
+msgstr "All Contributors"
+
+#: src/components/contribute-form.tsx:63
+msgid "Amount"
+msgstr "Amount"
+
+#: src/routes/admin/review.$projectId.tsx:210
+msgid "Approve"
+msgstr "Approve"
+
+#: src/routes/admin/review.$projectId.tsx:167
+msgid "Approve Project"
+msgstr "Approve Project"
+
+#: src/routes/admin/review.$projectId.tsx:210
+msgid "Approving..."
+msgstr "Approving..."
+
+#: src/components/navbar.tsx:53
+msgid "Browse"
+msgstr "Browse"
+
+#: src/routes/index.tsx:36
+#: src/routes/projects/index.tsx:39
+msgid "Browse Projects"
+msgstr "Browse Projects"
+
+#: src/routes/submit.tsx:142
+msgid "Category"
+msgstr "Category"
+
+#: src/routes/index.tsx:29
+msgid "Connecting volunteers with sponsors to fund and execute community projects. Suggest ideas, fund what matters, and volunteer to make it happen."
+msgstr "Connecting volunteers with sponsors to fund and execute community projects. Suggest ideas, fund what matters, and volunteer to make it happen."
+
+#: src/routes/index.tsx:71
+msgid "Contribute to projects you care about and watch them reach their funding goals."
+msgstr "Contribute to projects you care about and watch them reach their funding goals."
+
+#: src/routes/submit.tsx:101
+msgid "Describe your project idea and it will be reviewed by an admin before going live."
+msgstr "Describe your project idea and it will be reviewed by an admin before going live."
+
+#: src/routes/submit.tsx:128
+msgid "Description"
+msgstr "Description"
+
+#: src/routes/projects/index.tsx:42
+msgid "Discover and support community volunteering projects."
+msgstr "Discover and support community volunteering projects."
+
+#: src/routes/admin/review.$projectId.tsx:201
+msgid "e.g. 10"
+msgstr "e.g. 10"
+
+#: src/routes/admin/review.$projectId.tsx:182
+msgid "e.g. 5000"
+msgstr "e.g. 5000"
+
+#: src/routes/submit.tsx:132
+msgid "Explain what the project involves, who it helps, and what volunteers would do"
+msgstr "Explain what the project involves, who it helps, and what volunteers would do"
+
+#: src/routes/admin/review.$projectId.tsx:91
+msgid "Failed to approve project"
+msgstr "Failed to approve project"
+
+#: src/components/contribute-form.tsx:49
+msgid "Failed to contribute"
+msgstr "Failed to contribute"
+
+#: src/routes/admin/review.$projectId.tsx:104
+msgid "Failed to reject project"
+msgstr "Failed to reject project"
+
+#: src/components/volunteer-button.tsx:43
+msgid "Failed to sign up"
+msgstr "Failed to sign up"
+
+#: src/routes/submit.tsx:56
+msgid "Failed to submit project"
+msgstr "Failed to submit project"
+
+#: src/components/volunteer-button.tsx:38
+msgid "Failed to withdraw"
+msgstr "Failed to withdraw"
+
+#: src/routes/index.tsx:92
+msgid "Featured Projects"
+msgstr "Featured Projects"
+
+#: src/components/contribute-form.tsx:70
+#: src/routes/index.tsx:69
+msgid "Fund"
+msgstr "Fund"
+
+#: src/components/project-status-badge.tsx:24
+#: src/routes/projects/index.tsx:31
+msgid "Funded"
+msgstr "Funded"
+
+#: src/components/project-detail-content.tsx:86
+#: src/components/project-status-badge.tsx:23
+#: src/routes/projects/index.tsx:30
+#: src/routes/projects/index.tsx:62
+msgid "Funding"
+msgstr "Funding"
+
+#: src/routes/admin/review.$projectId.tsx:175
+msgid "Funding Target ($)"
+msgstr "Funding Target ($)"
+
+#: src/routes/submit.tsx:116
+msgid "Give your idea a clear, descriptive title"
+msgstr "Give your idea a clear, descriptive title"
+
+#: src/components/navbar.tsx:54
+#: src/routes/leaderboard.tsx:28
+msgid "Honor Board"
+msgstr "Honor Board"
+
+#: src/routes/index.tsx:53
+msgid "How It Works"
+msgstr "How It Works"
+
+#: src/routes/projects/index.tsx:55
+msgid "Most Liked"
+msgstr "Most Liked"
+
+#: src/routes/leaderboard.tsx:56
+msgid "No contributions yet. Be the first to fund a project!"
+msgstr "No contributions yet. Be the first to fund a project!"
+
+#: src/routes/admin/index.tsx:64
+msgid "No pending projects to review."
+msgstr "No pending projects to review."
+
+#: src/routes/projects/index.tsx:106
+msgid "No projects found. Be the first to submit an idea!"
+msgstr "No projects found. Be the first to submit an idea!"
+
+#: src/routes/index.tsx:121
+msgid "No projects yet. Be the first to submit an idea!"
+msgstr "No projects yet. Be the first to submit an idea!"
+
+#: src/routes/index.tsx:81
+msgid "Once funded, sign up to volunteer and help bring the project to life."
+msgstr "Once funded, sign up to volunteer and help bring the project to life."
+
+#: src/components/project-status-badge.tsx:22
+msgid "Pending"
+msgstr "Pending"
+
+#: src/components/contribute-form.tsx:37
+msgid "Please enter a valid amount"
+msgstr "Please enter a valid amount"
+
+#: src/routes/admin/review.$projectId.tsx:70
+msgid "Please enter a valid funding target"
+msgstr "Please enter a valid funding target"
+
+#: src/routes/admin/review.$projectId.tsx:75
+msgid "Please enter a valid number of volunteers"
+msgstr "Please enter a valid number of volunteers"
+
+#: src/routes/submit.tsx:73
+msgid "Please fill in all fields"
+msgstr "Please fill in all fields"
+
+#: src/routes/admin/review.$projectId.tsx:87
+msgid "Project approved!"
+msgstr "Project approved!"
+
+#: src/components/project-detail-content.tsx:48
+#: src/routes/admin/review.$projectId.tsx:132
+msgid "Project not found."
+msgstr "Project not found."
+
+#: src/routes/admin/review.$projectId.tsx:100
+msgid "Project rejected"
+msgstr "Project rejected"
+
+#: src/components/project-status-badge.tsx:25
+#: src/routes/projects/index.tsx:32
+msgid "Ready"
+msgstr "Ready"
+
+#: src/routes/leaderboard.tsx:31
+msgid "Recognizing our top sponsors and funders."
+msgstr "Recognizing our top sponsors and funders."
+
+#: src/routes/admin/review.$projectId.tsx:218
+msgid "Reject"
+msgstr "Reject"
+
+#: src/components/project-status-badge.tsx:26
+msgid "Rejected"
+msgstr "Rejected"
+
+#: src/routes/admin/review.$projectId.tsx:218
+msgid "Rejecting..."
+msgstr "Rejecting..."
+
+#: src/routes/admin/index.tsx:86
+msgid "Review"
+msgstr "Review"
+
+#: src/routes/admin/index.tsx:39
+msgid "Review and approve submitted project ideas."
+msgstr "Review and approve submitted project ideas."
+
+#: src/routes/submit.tsx:150
+msgid "Select a category"
+msgstr "Select a category"
+
+#: src/components/contribute-form.tsx:70
+msgid "Sending..."
+msgstr "Sending..."
+
+#: src/components/navbar.tsx:95
+#: src/components/navbar.tsx:143
+msgid "Sign In"
+msgstr "Sign In"
+
+#: src/components/contribute-form.tsx:31
+msgid "Sign in to contribute"
+msgstr "Sign in to contribute"
+
+#: src/components/like-button.tsx:22
+msgid "Sign in to like"
+msgstr "Sign in to like"
+
+#: src/components/volunteer-button.tsx:31
+msgid "Sign in to volunteer"
+msgstr "Sign in to volunteer"
+
+#: src/components/volunteer-button.tsx:57
+msgid "Sign Up to Volunteer"
+msgstr "Sign Up to Volunteer"
+
+#: src/routes/projects/index.tsx:48
+msgid "Sort:"
+msgstr "Sort:"
+
+#: src/routes/projects/index.tsx:69
+msgid "Status:"
+msgstr "Status:"
+
+#: src/routes/submit.tsx:98
+msgid "Submit a Volunteering Idea"
+msgstr "Submit a Volunteering Idea"
+
+#: src/routes/index.tsx:43
+msgid "Submit an Idea"
+msgstr "Submit an Idea"
+
+#: src/components/navbar.tsx:56
+#: src/routes/submit.tsx:167
+msgid "Submit Idea"
+msgstr "Submit Idea"
+
+#: src/routes/index.tsx:62
+msgid "Submit volunteering ideas and like the projects you believe in."
+msgstr "Submit volunteering ideas and like the projects you believe in."
+
+#. placeholder {0}: project.submittedBy
+#. placeholder {0}: project.submitterName
+#. placeholder {1}: new Date(project.createdAt).toLocaleDateString()
+#: src/components/project-detail-content.tsx:72
+#: src/routes/admin/index.tsx:91
+#: src/routes/admin/review.$projectId.tsx:154
+msgid "Submitted by {0} on {1}"
+msgstr "Submitted by {0} on {1}"
+
+#: src/routes/submit.tsx:167
+msgid "Submitting..."
+msgstr "Submitting..."
+
+#: src/routes/index.tsx:60
+msgid "Suggest & Vote"
+msgstr "Suggest & Vote"
+
+#: src/components/navbar.tsx:72
+#: src/routes/index.tsx:26
+msgid "Takatuf"
+msgstr "Takatuf"
+
+#: src/components/contribute-form.tsx:45
+msgid "Thank you for your contribution!"
+msgstr "Thank you for your contribution!"
+
+#. placeholder {0}: project.volunteersRequired
+#: src/components/project-detail-content.tsx:128
+msgid "This project is ready to start! All {0} volunteers have signed up."
+msgstr "This project is ready to start! All {0} volunteers have signed up."
+
+#: src/routes/submit.tsx:112
+msgid "Title"
+msgstr "Title"
+
+#: src/routes/index.tsx:98
+msgid "View all"
+msgstr "View all"
+
+#: src/routes/index.tsx:79
+msgid "Volunteer"
+msgstr "Volunteer"
+
+#: src/components/navbar.tsx:72
+#: src/routes/index.tsx:26
+#~ msgid "Volunteer Hub"
+#~ msgstr "Volunteer Hub"
+
+#: src/components/project-detail-content.tsx:114
+msgid "Volunteers"
+msgstr "Volunteers"
+
+#: src/routes/admin/review.$projectId.tsx:194
+msgid "Volunteers Required"
+msgstr "Volunteers Required"
+
+#: src/components/volunteer-button.tsx:57
+msgid "Withdraw"
+msgstr "Withdraw"
+
+#: src/components/volunteer-button.tsx:37
+msgid "You have withdrawn from this project"
+msgstr "You have withdrawn from this project"
+
+#: src/components/volunteer-button.tsx:42
+msgid "You signed up as a volunteer!"
+msgstr "You signed up as a volunteer!"
+
+#. placeholder {0}: (project.userContributionTotal / 100).toLocaleString()
+#: src/components/project-detail-content.tsx:100
+msgid "Your contribution: ${0}"
+msgstr "Your contribution: ${0}"
+
+#: src/routes/submit.tsx:50
+msgid "Your idea has been submitted for review!"
+msgstr "Your idea has been submitted for review!"

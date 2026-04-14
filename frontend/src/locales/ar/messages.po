@@ -1,0 +1,388 @@
+msgid ""
+msgstr ""
+"POT-Creation-Date: 2026-04-14 14:03+0300\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: @lingui/cli\n"
+"Language: ar\n"
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Plural-Forms: \n"
+
+#. placeholder {0}: entry.projectsFunded
+#: src/routes/leaderboard.tsx:96
+msgid "{0} projects"
+msgstr "{0} مشاريع"
+
+#. placeholder {0}: entry.projectsFunded
+#: src/routes/leaderboard.tsx:133
+msgid "{0} projects funded"
+msgstr "{0} مشاريع مموّلة"
+
+#: src/components/funding-bar.tsx:28
+msgid "{currentFormatted} / {targetFormatted} ({percent}%)"
+msgstr "{currentFormatted} / {targetFormatted} ({percent}%)"
+
+#: src/components/volunteer-button.tsx:60
+msgid "{volunteersCurrent} / {volunteersRequired} volunteers"
+msgstr "{volunteersCurrent} / {volunteersRequired} متطوع"
+
+#: src/components/navbar.tsx:59
+msgid "Admin"
+msgstr "الإدارة"
+
+#: src/routes/admin/index.tsx:36
+msgid "Admin Dashboard"
+msgstr "لوحة الإدارة"
+
+#: src/routes/projects/index.tsx:29
+msgid "All"
+msgstr "الكل"
+
+#: src/routes/leaderboard.tsx:110
+msgid "All Contributors"
+msgstr "جميع المساهمين"
+
+#: src/components/contribute-form.tsx:63
+msgid "Amount"
+msgstr "المبلغ"
+
+#: src/routes/admin/review.$projectId.tsx:210
+msgid "Approve"
+msgstr "موافقة"
+
+#: src/routes/admin/review.$projectId.tsx:167
+msgid "Approve Project"
+msgstr "الموافقة على المشروع"
+
+#: src/routes/admin/review.$projectId.tsx:210
+msgid "Approving..."
+msgstr "جارٍ الموافقة..."
+
+#: src/components/navbar.tsx:53
+msgid "Browse"
+msgstr "تصفح"
+
+#: src/routes/index.tsx:36
+#: src/routes/projects/index.tsx:39
+msgid "Browse Projects"
+msgstr "تصفح المشاريع"
+
+#: src/routes/submit.tsx:142
+msgid "Category"
+msgstr "الفئة"
+
+#: src/routes/index.tsx:29
+msgid "Connecting volunteers with sponsors to fund and execute community projects. Suggest ideas, fund what matters, and volunteer to make it happen."
+msgstr "نربط المتطوعين بالممولين لتمويل وتنفيذ مشاريع مجتمعية. اقترح أفكاراً، موّل ما يهمك، وتطوّع لتحقيقها."
+
+#: src/routes/index.tsx:71
+msgid "Contribute to projects you care about and watch them reach their funding goals."
+msgstr "ساهم في تمويل المشاريع التي تهمك وشاهدها تحقق أهدافها."
+
+#: src/routes/submit.tsx:101
+msgid "Describe your project idea and it will be reviewed by an admin before going live."
+msgstr "صِف فكرة مشروعك وسيتم مراجعتها من قبل المسؤول قبل نشرها."
+
+#: src/routes/submit.tsx:128
+msgid "Description"
+msgstr "الوصف"
+
+#: src/routes/projects/index.tsx:42
+msgid "Discover and support community volunteering projects."
+msgstr "اكتشف وادعم مشاريع التطوع المجتمعية."
+
+#: src/routes/admin/review.$projectId.tsx:201
+msgid "e.g. 10"
+msgstr "مثال: 10"
+
+#: src/routes/admin/review.$projectId.tsx:182
+msgid "e.g. 5000"
+msgstr "مثال: 5000"
+
+#: src/routes/submit.tsx:132
+msgid "Explain what the project involves, who it helps, and what volunteers would do"
+msgstr "اشرح ما يتضمنه المشروع، من يستفيد منه، وما الذي سيفعله المتطوعون"
+
+#: src/routes/admin/review.$projectId.tsx:91
+msgid "Failed to approve project"
+msgstr "فشل في الموافقة على المشروع"
+
+#: src/components/contribute-form.tsx:49
+msgid "Failed to contribute"
+msgstr "فشل في المساهمة"
+
+#: src/routes/admin/review.$projectId.tsx:104
+msgid "Failed to reject project"
+msgstr "فشل في رفض المشروع"
+
+#: src/components/volunteer-button.tsx:43
+msgid "Failed to sign up"
+msgstr "فشل في التسجيل"
+
+#: src/routes/submit.tsx:56
+msgid "Failed to submit project"
+msgstr "فشل في تقديم المشروع"
+
+#: src/components/volunteer-button.tsx:38
+msgid "Failed to withdraw"
+msgstr "فشل في الانسحاب"
+
+#: src/routes/index.tsx:92
+msgid "Featured Projects"
+msgstr "مشاريع مميزة"
+
+#: src/components/contribute-form.tsx:70
+#: src/routes/index.tsx:69
+msgid "Fund"
+msgstr "موّل"
+
+#: src/components/project-status-badge.tsx:24
+#: src/routes/projects/index.tsx:31
+msgid "Funded"
+msgstr "مُموَّل"
+
+#: src/components/project-detail-content.tsx:86
+#: src/components/project-status-badge.tsx:23
+#: src/routes/projects/index.tsx:30
+#: src/routes/projects/index.tsx:62
+msgid "Funding"
+msgstr "قيد التمويل"
+
+#: src/routes/admin/review.$projectId.tsx:175
+msgid "Funding Target ($)"
+msgstr "هدف التمويل ($)"
+
+#: src/routes/submit.tsx:116
+msgid "Give your idea a clear, descriptive title"
+msgstr "أعطِ فكرتك عنواناً واضحاً ووصفياً"
+
+#: src/components/navbar.tsx:54
+#: src/routes/leaderboard.tsx:28
+msgid "Honor Board"
+msgstr "لوحة الشرف"
+
+#: src/routes/index.tsx:53
+msgid "How It Works"
+msgstr "كيف يعمل"
+
+#: src/routes/projects/index.tsx:55
+msgid "Most Liked"
+msgstr "الأكثر إعجاباً"
+
+#: src/routes/leaderboard.tsx:56
+msgid "No contributions yet. Be the first to fund a project!"
+msgstr "لا توجد مساهمات بعد. كن أول من يموّل مشروعاً!"
+
+#: src/routes/admin/index.tsx:64
+msgid "No pending projects to review."
+msgstr "لا توجد مشاريع معلقة للمراجعة."
+
+#: src/routes/projects/index.tsx:106
+msgid "No projects found. Be the first to submit an idea!"
+msgstr "لا توجد مشاريع. كن أول من يقدم فكرة!"
+
+#: src/routes/index.tsx:121
+msgid "No projects yet. Be the first to submit an idea!"
+msgstr "لا توجد مشاريع بعد. كن أول من يقدم فكرة!"
+
+#: src/routes/index.tsx:81
+msgid "Once funded, sign up to volunteer and help bring the project to life."
+msgstr "بعد التمويل، سجّل للتطوع وساعد في تحقيق المشروع."
+
+#: src/components/project-status-badge.tsx:22
+msgid "Pending"
+msgstr "قيد الانتظار"
+
+#: src/components/contribute-form.tsx:37
+msgid "Please enter a valid amount"
+msgstr "الرجاء إدخال مبلغ صحيح"
+
+#: src/routes/admin/review.$projectId.tsx:70
+msgid "Please enter a valid funding target"
+msgstr "الرجاء إدخال هدف تمويل صحيح"
+
+#: src/routes/admin/review.$projectId.tsx:75
+msgid "Please enter a valid number of volunteers"
+msgstr "الرجاء إدخال عدد صحيح من المتطوعين"
+
+#: src/routes/submit.tsx:73
+msgid "Please fill in all fields"
+msgstr "الرجاء ملء جميع الحقول"
+
+#: src/routes/admin/review.$projectId.tsx:87
+msgid "Project approved!"
+msgstr "تمت الموافقة على المشروع!"
+
+#: src/components/project-detail-content.tsx:48
+#: src/routes/admin/review.$projectId.tsx:132
+msgid "Project not found."
+msgstr "المشروع غير موجود."
+
+#: src/routes/admin/review.$projectId.tsx:100
+msgid "Project rejected"
+msgstr "تم رفض المشروع"
+
+#: src/components/project-status-badge.tsx:25
+#: src/routes/projects/index.tsx:32
+msgid "Ready"
+msgstr "جاهز"
+
+#: src/routes/leaderboard.tsx:31
+msgid "Recognizing our top sponsors and funders."
+msgstr "نكرّم أبرز الممولين والداعمين."
+
+#: src/routes/admin/review.$projectId.tsx:218
+msgid "Reject"
+msgstr "رفض"
+
+#: src/components/project-status-badge.tsx:26
+msgid "Rejected"
+msgstr "مرفوض"
+
+#: src/routes/admin/review.$projectId.tsx:218
+msgid "Rejecting..."
+msgstr "جارٍ الرفض..."
+
+#: src/routes/admin/index.tsx:86
+msgid "Review"
+msgstr "مراجعة"
+
+#: src/routes/admin/index.tsx:39
+msgid "Review and approve submitted project ideas."
+msgstr "راجع ووافق على أفكار المشاريع المقدمة."
+
+#: src/routes/submit.tsx:150
+msgid "Select a category"
+msgstr "اختر فئة"
+
+#: src/components/contribute-form.tsx:70
+msgid "Sending..."
+msgstr "جارٍ الإرسال..."
+
+#: src/components/navbar.tsx:95
+#: src/components/navbar.tsx:143
+msgid "Sign In"
+msgstr "تسجيل الدخول"
+
+#: src/components/contribute-form.tsx:31
+msgid "Sign in to contribute"
+msgstr "سجّل الدخول للمساهمة"
+
+#: src/components/like-button.tsx:22
+msgid "Sign in to like"
+msgstr "سجّل الدخول للإعجاب"
+
+#: src/components/volunteer-button.tsx:31
+msgid "Sign in to volunteer"
+msgstr "سجّل الدخول للتطوع"
+
+#: src/components/volunteer-button.tsx:57
+msgid "Sign Up to Volunteer"
+msgstr "سجّل للتطوع"
+
+#: src/routes/projects/index.tsx:48
+msgid "Sort:"
+msgstr "ترتيب:"
+
+#: src/routes/projects/index.tsx:69
+msgid "Status:"
+msgstr "الحالة:"
+
+#: src/routes/submit.tsx:98
+msgid "Submit a Volunteering Idea"
+msgstr "قدّم فكرة تطوعية"
+
+#: src/routes/index.tsx:43
+msgid "Submit an Idea"
+msgstr "قدّم فكرة"
+
+#: src/components/navbar.tsx:56
+#: src/routes/submit.tsx:167
+msgid "Submit Idea"
+msgstr "قدّم فكرة"
+
+#: src/routes/index.tsx:62
+msgid "Submit volunteering ideas and like the projects you believe in."
+msgstr "قدّم أفكاراً تطوعية وأعجب بالمشاريع التي تؤمن بها."
+
+#. placeholder {0}: project.submittedBy
+#. placeholder {0}: project.submitterName
+#. placeholder {1}: new Date(project.createdAt).toLocaleDateString()
+#: src/components/project-detail-content.tsx:72
+#: src/routes/admin/index.tsx:91
+#: src/routes/admin/review.$projectId.tsx:154
+msgid "Submitted by {0} on {1}"
+msgstr "مقدم من {0} بتاريخ {1}"
+
+#: src/routes/submit.tsx:167
+msgid "Submitting..."
+msgstr "جارٍ التقديم..."
+
+#: src/routes/index.tsx:60
+msgid "Suggest & Vote"
+msgstr "اقترح وصوّت"
+
+#: src/components/navbar.tsx:72
+#: src/routes/index.tsx:26
+msgid "Takatuf"
+msgstr "Takatuf"
+
+#: src/components/contribute-form.tsx:45
+msgid "Thank you for your contribution!"
+msgstr "شكراً لمساهمتك!"
+
+#. placeholder {0}: project.volunteersRequired
+#: src/components/project-detail-content.tsx:128
+msgid "This project is ready to start! All {0} volunteers have signed up."
+msgstr "هذا المشروع جاهز للبدء! جميع المتطوعين الـ {0} سجلوا."
+
+#: src/routes/submit.tsx:112
+msgid "Title"
+msgstr "العنوان"
+
+#: src/routes/index.tsx:98
+msgid "View all"
+msgstr "عرض الكل"
+
+#: src/routes/index.tsx:79
+msgid "Volunteer"
+msgstr "تطوّع"
+
+#: src/components/navbar.tsx:72
+#: src/routes/index.tsx:26
+#~ msgid "Volunteer Hub"
+#~ msgstr "مركز التطوع"
+
+#: src/components/project-detail-content.tsx:114
+msgid "Volunteers"
+msgstr "المتطوعون"
+
+#: src/routes/admin/review.$projectId.tsx:194
+msgid "Volunteers Required"
+msgstr "المتطوعون المطلوبون"
+
+#: src/components/volunteer-button.tsx:57
+msgid "Withdraw"
+msgstr "انسحاب"
+
+#: src/components/volunteer-button.tsx:37
+msgid "You have withdrawn from this project"
+msgstr "لقد انسحبت من هذا المشروع"
+
+#: src/components/volunteer-button.tsx:42
+msgid "You signed up as a volunteer!"
+msgstr "لقد سجلت كمتطوع!"
+
+#. placeholder {0}: (project.userContributionTotal / 100).toLocaleString()
+#: src/components/project-detail-content.tsx:100
+msgid "Your contribution: ${0}"
+msgstr "مساهمتك: ${0}"
+
+#: src/routes/submit.tsx:50
+msgid "Your idea has been submitted for review!"
+msgstr "تم تقديم فكرتك للمراجعة!"

@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
+import { Trans } from "@lingui/react/macro"
+import { useLingui } from "@lingui/react/macro"
 import { useQuery } from "@tanstack/react-query"
 import { toast } from "sonner"
 import { api } from "@/lib/api"
@@ -32,6 +34,7 @@ const CATEGORY_LABELS: Record<ProjectCategory, string> = {
 }
 
 function AdminReviewPage() {
+  const { t } = useLingui()
   const { projectId } = Route.useParams()
   const navigate = useNavigate()
 
@@ -64,12 +67,12 @@ function AdminReviewPage() {
     const volunteers = parseInt(volunteersRequired, 10)
 
     if (isNaN(funding) || funding <= 0) {
-      toast.error("Please enter a valid funding target")
+      toast.error(t`Please enter a valid funding target`)
       return
     }
 
     if (isNaN(volunteers) || volunteers <= 0) {
-      toast.error("Please enter a valid number of volunteers")
+      toast.error(t`Please enter a valid number of volunteers`)
       return
     }
 
@@ -81,11 +84,11 @@ function AdminReviewPage() {
       },
       {
         onSuccess: () => {
-          toast.success("Project approved!")
+          toast.success(t`Project approved!`)
           void navigate({ to: "/admin" })
         },
         onError: (error: Error) => {
-          toast.error(error.message || "Failed to approve project")
+          toast.error(error.message || t`Failed to approve project`)
         },
       }
     )
@@ -94,11 +97,11 @@ function AdminReviewPage() {
   function handleReject() {
     rejectMutation.mutate(Number(projectId), {
       onSuccess: () => {
-        toast.success("Project rejected")
+        toast.success(t`Project rejected`)
         void navigate({ to: "/admin" })
       },
       onError: (error: Error) => {
-        toast.error(error.message || "Failed to reject project")
+        toast.error(error.message || t`Failed to reject project`)
       },
     })
   }
@@ -126,7 +129,7 @@ function AdminReviewPage() {
       <div className="mx-auto max-w-2xl">
         <Card>
           <CardContent className="py-12 text-center">
-            <p className="text-muted-foreground">Project not found.</p>
+            <p className="text-muted-foreground"><Trans>Project not found.</Trans></p>
           </CardContent>
         </Card>
       </div>
@@ -148,8 +151,8 @@ function AdminReviewPage() {
             </Badge>
           </div>
           <CardDescription>
-            Submitted by {project.submittedBy} on{" "}
-            {new Date(project.createdAt).toLocaleDateString()}
+            <Trans>Submitted by {project.submittedBy} on{" "}
+            {new Date(project.createdAt).toLocaleDateString()}</Trans>
           </CardDescription>
         </CardHeader>
         <CardContent className="flex flex-col gap-6">
@@ -161,7 +164,7 @@ function AdminReviewPage() {
 
           <form onSubmit={handleApprove} className="flex flex-col gap-6">
             <h3 className="text-lg font-medium text-foreground">
-              Approve Project
+              <Trans>Approve Project</Trans>
             </h3>
 
             <div className="flex flex-col gap-2">
@@ -169,14 +172,14 @@ function AdminReviewPage() {
                 htmlFor="funding"
                 className="text-sm font-medium text-foreground/90"
               >
-                Funding Target ($)
+                <Trans>Funding Target ($)</Trans>
               </label>
               <Input
                 id="funding"
                 type="number"
                 min="1"
                 step="1"
-                placeholder="e.g. 5000"
+                placeholder={t`e.g. 5000`}
                 value={fundingTarget}
                 onChange={(e) => setFundingTarget(e.target.value)}
                 disabled={isPending}
@@ -188,14 +191,14 @@ function AdminReviewPage() {
                 htmlFor="volunteers"
                 className="text-sm font-medium text-foreground/90"
               >
-                Volunteers Required
+                <Trans>Volunteers Required</Trans>
               </label>
               <Input
                 id="volunteers"
                 type="number"
                 min="1"
                 step="1"
-                placeholder="e.g. 10"
+                placeholder={t`e.g. 10`}
                 value={volunteersRequired}
                 onChange={(e) => setVolunteersRequired(e.target.value)}
                 disabled={isPending}
@@ -204,7 +207,7 @@ function AdminReviewPage() {
 
             <div className="flex items-center gap-3">
               <Button type="submit" disabled={isPending}>
-                {approveMutation.isPending ? "Approving..." : "Approve"}
+                {approveMutation.isPending ? <Trans>Approving...</Trans> : <Trans>Approve</Trans>}
               </Button>
               <Button
                 type="button"
@@ -212,7 +215,7 @@ function AdminReviewPage() {
                 onClick={handleReject}
                 disabled={isPending}
               >
-                {rejectMutation.isPending ? "Rejecting..." : "Reject"}
+                {rejectMutation.isPending ? <Trans>Rejecting...</Trans> : <Trans>Reject</Trans>}
               </Button>
             </div>
           </form>

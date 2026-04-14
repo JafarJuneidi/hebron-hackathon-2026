@@ -1,5 +1,7 @@
 import { useState } from "react"
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
+import { Trans } from "@lingui/react/macro"
+import { useLingui } from "@lingui/react/macro"
 import { useAuth } from "@clerk/react"
 import { useMutation } from "@tanstack/react-query"
 import { toast } from "sonner"
@@ -33,6 +35,7 @@ export const Route = createFileRoute("/submit")({
 })
 
 function SubmitPage() {
+  const { t } = useLingui()
   const { isSignedIn, isLoaded } = useAuth()
   const navigate = useNavigate()
 
@@ -44,13 +47,13 @@ function SubmitPage() {
     mutationFn: (data: SubmitProjectRequest) =>
       api.post<Project>("/api/projects", data),
     onSuccess: () => {
-      toast.success("Your idea has been submitted for review!")
+      toast.success(t`Your idea has been submitted for review!`)
       setTitle("")
       setDescription("")
       setCategory("")
     },
     onError: (error: Error) => {
-      toast.error(error.message || "Failed to submit project")
+      toast.error(error.message || t`Failed to submit project`)
     },
   })
 
@@ -67,7 +70,7 @@ function SubmitPage() {
     e.preventDefault()
 
     if (!title.trim() || !description.trim() || !category) {
-      toast.error("Please fill in all fields")
+      toast.error(t`Please fill in all fields`)
       return
     }
 
@@ -92,11 +95,11 @@ function SubmitPage() {
       <Card>
         <CardHeader>
           <CardTitle className="text-2xl font-semibold text-foreground">
-            Submit a Volunteering Idea
+            <Trans>Submit a Volunteering Idea</Trans>
           </CardTitle>
           <CardDescription>
-            Describe your project idea and it will be reviewed by an admin
-            before going live.
+            <Trans>Describe your project idea and it will be reviewed by an admin
+            before going live.</Trans>
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -106,11 +109,11 @@ function SubmitPage() {
                 htmlFor="title"
                 className="text-sm font-medium text-foreground/90"
               >
-                Title
+                <Trans>Title</Trans>
               </label>
               <Input
                 id="title"
-                placeholder="Give your idea a clear, descriptive title"
+                placeholder={t`Give your idea a clear, descriptive title`}
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 disabled={submitMutation.isPending}
@@ -122,11 +125,11 @@ function SubmitPage() {
                 htmlFor="description"
                 className="text-sm font-medium text-foreground/90"
               >
-                Description
+                <Trans>Description</Trans>
               </label>
               <Textarea
                 id="description"
-                placeholder="Explain what the project involves, who it helps, and what volunteers would do"
+                placeholder={t`Explain what the project involves, who it helps, and what volunteers would do`}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 disabled={submitMutation.isPending}
@@ -136,7 +139,7 @@ function SubmitPage() {
 
             <div className="flex flex-col gap-2">
               <label className="text-sm font-medium text-foreground/90">
-                Category
+                <Trans>Category</Trans>
               </label>
               <Select
                 value={category}
@@ -144,7 +147,7 @@ function SubmitPage() {
                 disabled={submitMutation.isPending}
               >
                 <SelectTrigger className="w-full">
-                  <SelectValue placeholder="Select a category" />
+                  <SelectValue placeholder={t`Select a category`} />
                 </SelectTrigger>
                 <SelectContent>
                   {PROJECT_CATEGORIES.map((cat) => (
@@ -161,7 +164,7 @@ function SubmitPage() {
               disabled={submitMutation.isPending}
               className="self-start"
             >
-              {submitMutation.isPending ? "Submitting..." : "Submit Idea"}
+              {submitMutation.isPending ? <Trans>Submitting...</Trans> : <Trans>Submit Idea</Trans>}
             </Button>
           </form>
         </CardContent>

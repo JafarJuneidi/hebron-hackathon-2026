@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router"
+import { Trans } from "@lingui/react/macro"
 import { usePendingProjects } from "@/hooks/use-admin"
 import { Badge } from "@/components/ui/badge"
 import {
@@ -32,10 +33,10 @@ function AdminPage() {
     <div className="mx-auto max-w-4xl">
       <div className="mb-8">
         <h1 className="text-2xl font-semibold text-foreground">
-          Admin Dashboard
+          <Trans>Admin Dashboard</Trans>
         </h1>
         <p className="text-muted-foreground mt-1">
-          Review and approve submitted project ideas.
+          <Trans>Review and approve submitted project ideas.</Trans>
         </p>
       </div>
 
@@ -60,7 +61,7 @@ function AdminPage() {
         <Card>
           <CardContent className="py-12 text-center">
             <p className="text-muted-foreground">
-              No pending projects to review.
+              <Trans>No pending projects to review.</Trans>
             </p>
           </CardContent>
         </Card>
@@ -82,13 +83,13 @@ function AdminPage() {
                   </div>
                   <Link to="/admin/review/$projectId" params={{ projectId: String(project.id) }}>
                     <Button variant="outline" size="sm" className="w-full sm:w-auto">
-                      Review
+                      <Trans>Review</Trans>
                     </Button>
                   </Link>
                 </div>
                 <CardDescription>
-                  Submitted by {project.submittedBy} on{" "}
-                  {new Date(project.createdAt).toLocaleDateString()}
+                  <Trans>Submitted by {project.submittedBy} on{" "}
+                  {new Date(project.createdAt).toLocaleDateString()}</Trans>
                 </CardDescription>
               </CardHeader>
               <CardContent>

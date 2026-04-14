@@ -9,6 +9,7 @@ import { likesRoutes } from "./routes/likes.ts"
 import { contributionRoutes } from "./routes/contributions.ts"
 import { volunteerRoutes } from "./routes/volunteers.ts"
 import { userRoutes } from "./routes/users.ts"
+import { leaderboardRoutes } from "./routes/leaderboard.ts"
 
 // Import DB to ensure tables are created on startup
 import "./db/index.ts"
@@ -24,6 +25,7 @@ app.route("/api/projects", contributionRoutes)
 app.route("/api/projects", volunteerRoutes)
 app.route("/api/admin", adminRoutes)
 app.route("/api/users", userRoutes)
+app.route("/api/leaderboard", leaderboardRoutes)
 
 const PORT = 3000
 

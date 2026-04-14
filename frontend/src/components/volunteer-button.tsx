@@ -1,4 +1,6 @@
 import { useAuth } from "@clerk/react"
+import { Trans } from "@lingui/react/macro"
+import { useLingui } from "@lingui/react/macro"
 import { toast } from "sonner"
 import { Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -17,6 +19,7 @@ export function VolunteerButton({
   volunteersCurrent,
   volunteersRequired,
 }: VolunteerButtonProps) {
+  const { t } = useLingui()
   const { isSignedIn } = useAuth()
   const volunteerMutation = useVolunteer(projectId)
   const withdrawMutation = useWithdrawVolunteer(projectId)
@@ -25,19 +28,19 @@ export function VolunteerButton({
 
   function handleClick() {
     if (!isSignedIn) {
-      toast.error("Sign in to volunteer")
+      toast.error(t`Sign in to volunteer`)
       return
     }
 
     if (isVolunteered) {
       withdrawMutation.mutate(undefined, {
-        onSuccess: () => toast.success("You have withdrawn from this project"),
-        onError: (error) => toast.error(error.message || "Failed to withdraw"),
+        onSuccess: () => toast.success(t`You have withdrawn from this project`),
+        onError: (error) => toast.error(error.message || t`Failed to withdraw`),
       })
     } else {
       volunteerMutation.mutate(undefined, {
-        onSuccess: () => toast.success("You signed up as a volunteer!"),
-        onError: (error) => toast.error(error.message || "Failed to sign up"),
+        onSuccess: () => toast.success(t`You signed up as a volunteer!`),
+        onError: (error) => toast.error(error.message || t`Failed to sign up`),
       })
     }
   }
@@ -51,10 +54,10 @@ export function VolunteerButton({
         disabled={isPending}
       >
         <Users className="size-4" />
-        {isVolunteered ? "Withdraw" : "Sign Up to Volunteer"}
+        {isVolunteered ? <Trans>Withdraw</Trans> : <Trans>Sign Up to Volunteer</Trans>}
       </Button>
       <span className="text-sm text-muted-foreground">
-        {volunteersCurrent} / {volunteersRequired} volunteers
+        <Trans>{volunteersCurrent} / {volunteersRequired} volunteers</Trans>
       </span>
     </div>
   )

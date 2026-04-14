@@ -1,10 +1,13 @@
 import { useState } from "react"
 import { Link } from "@tanstack/react-router"
 import { SignInButton, UserButton, useAuth } from "@clerk/react"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Trans } from "@lingui/react/macro"
+import { Moon, Sun, Menu, X, Languages } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useTheme } from "@/components/theme-provider"
 import { useCurrentUser } from "@/hooks/use-current-user"
+import { activateLocale, locales, type Locale } from "@/lib/i18n"
+import { useLingui } from "@lingui/react"
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
@@ -22,6 +25,24 @@ function ThemeToggle() {
   )
 }
 
+function LanguageToggle() {
+  const { i18n } = useLingui()
+  const currentLocale = i18n.locale as Locale
+  const nextLocale: Locale = currentLocale === "en" ? "ar" : "en"
+
+  return (
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={() => activateLocale(nextLocale)}
+      className="gap-1.5 text-xs"
+    >
+      <Languages className="size-4" />
+      {locales[nextLocale]}
+    </Button>
+  )
+}
+
 export function Navbar() {
   const { isSignedIn } = useAuth()
   const { data: currentUser } = useCurrentUser()
@@ -29,11 +50,14 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const navLinks = [
-    { to: "/projects" as const, label: "Browse" },
+    { to: "/projects" as const, label: <Trans>Browse</Trans> },
+    { to: "/leaderboard" as const, label: <Trans>Honor Board</Trans> },
     ...(isSignedIn
-      ? [{ to: "/submit" as const, label: "Submit Idea" }]
+      ? [{ to: "/submit" as const, label: <Trans>Submit Idea</Trans> }]
       : []),
-    ...(isAdmin ? [{ to: "/admin" as const, label: "Admin" }] : []),
+    ...(isAdmin
+      ? [{ to: "/admin" as const, label: <Trans>Admin</Trans> }]
+      : []),
   ]
 
   return (
@@ -45,7 +69,7 @@ export function Navbar() {
           className="text-lg font-semibold"
           onClick={() => setMobileOpen(false)}
         >
-          Volunteer Hub
+          <Trans>Takatuf</Trans>
         </Link>
 
         {/* Desktop nav */}
@@ -63,11 +87,12 @@ export function Navbar() {
 
         {/* Desktop right side */}
         <div className="hidden items-center gap-3 sm:flex">
+          <LanguageToggle />
           <ThemeToggle />
           {!isSignedIn ? (
             <SignInButton mode="modal">
               <button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-4 py-2 text-sm font-medium transition-colors">
-                Sign In
+                <Trans>Sign In</Trans>
               </button>
             </SignInButton>
           ) : (
@@ -77,6 +102,7 @@ export function Navbar() {
 
         {/* Mobile right side */}
         <div className="flex items-center gap-2 sm:hidden">
+          <LanguageToggle />
           <ThemeToggle />
           {isSignedIn && <UserButton />}
           <Button
@@ -114,7 +140,7 @@ export function Navbar() {
                   className="bg-primary text-primary-foreground hover:bg-primary/90 mt-1 rounded-md px-3 py-2 text-sm font-medium transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Sign In
+                  <Trans>Sign In</Trans>
                 </button>
               </SignInButton>
             )}

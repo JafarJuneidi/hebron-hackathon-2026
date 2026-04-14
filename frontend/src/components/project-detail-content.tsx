@@ -7,6 +7,7 @@ import { ProjectStatusBadge } from "@/components/project-status-badge"
 import { FundingBar } from "@/components/funding-bar"
 import { LikeButton } from "@/components/like-button"
 import { ContributeForm } from "@/components/contribute-form"
+import { ShareButton } from "@/components/share-button"
 import { VolunteerButton } from "@/components/volunteer-button"
 import type { ProjectCategory } from "@shared/types"
 import { CheckCircle, DollarSign, Users } from "lucide-react"
@@ -129,12 +130,13 @@ export function ProjectDetailContent({
 
       {/* Like */}
       <Separator />
-      <div className="flex justify-center">
+      <div className="flex justify-center gap-4">
         <LikeButton
           projectId={project.id}
           likes={project.likes}
           userLiked={project.userLiked}
         />
+        <ShareButton projectId={project.id} title={project.title} />
       </div>
     </div>
   )

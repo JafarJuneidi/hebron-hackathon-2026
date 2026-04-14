@@ -1,11 +1,18 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
+import { ClerkProvider } from "@clerk/react"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { RouterProvider, createRouter } from "@tanstack/react-router"
 import { ThemeProvider } from "@/components/theme-provider.tsx"
 import { routeTree } from "./routeTree.gen"
 
 import "./index.css"
+
+const CLERK_PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+
+if (!CLERK_PUBLISHABLE_KEY) {
+  throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY in environment")
+}
 
 const queryClient = new QueryClient()
 const router = createRouter({ routeTree })
@@ -18,10 +25,12 @@ declare module "@tanstack/react-router" {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <RouterProvider router={router} />
-      </ThemeProvider>
-    </QueryClientProvider>
+    <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY}>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </QueryClientProvider>
+    </ClerkProvider>
   </StrictMode>
 )

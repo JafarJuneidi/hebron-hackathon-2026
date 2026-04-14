@@ -17,6 +17,9 @@ dist-ssr
 frontend/src/routeTree.gen.ts
 frontend/.tanstack
 
+# Database
+backend/data/
+
 # Environment variables
 .env
 .env.*
